@@ -10,6 +10,9 @@ currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentfram
 parentdir = os.path.dirname(currentdir)
 sys.path.insert(0, parentdir)
 import unittest
+from utilities import *
+import graphviz
+import networkx as nx
 
   
 class executionTests(unittest.TestCase):
@@ -25,9 +28,23 @@ class executionTests(unittest.TestCase):
 class nfa2GtgTests(unittest.TestCase):
     def testFunctionCall(self):
         """
-        Tests ability to call the function nfa2Gtg.
+        Tests ability to call the function nfa2Gtg
         """
-        self.assertTrue(2 == 2)
+        # Read in the test nfa
+        path = os.getcwd().split('/')
+
+        filepath = 'NFAs/tests/test1.gv'
+        if path[len(path)-1] != 'testing':
+            filepath = 'testing/' + filepath
+        
+        gv = graphviz.Source.from_file(filepath)
+   
+        # Convert to GTG
+        nfa2Gtg(gv)
+     
+        print(gv.source)
+        gv.view()
+
     
  
          
