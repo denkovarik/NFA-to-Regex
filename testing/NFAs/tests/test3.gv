@@ -1,0 +1,17 @@
+digraph deterministic_finite_accepter {
+	rankdir=LR;
+	size="8,5"
+	node [shape = point ]; qi
+	node [shape = doublecircle]; q_3
+	node [shape = circle];
+	qi  -> q_1
+	q_1 -> q_1 [ label = "e" ];
+	q_1 -> q_2 [ label = "a" ];
+	q_1 -> q_3 [ label = "h" ];
+	q_2 -> q_1 [ label = "b" ];
+	q_2 -> q_2 [ label = "f" ];
+	q_2 -> q_3 [ label = "c" ];
+	q_3 -> q_1 [ label = "i" ];
+	q_3 -> q_2 [ label = "d" ];
+	q_3 -> q_3 [ label = "g" ];
+}

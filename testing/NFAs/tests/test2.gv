@@ -1,0 +1,16 @@
+digraph deterministic_finite_accepter {
+	rankdir=LR;
+	size="8,5"
+	node [shape = point ]; qi
+	node [shape = doublecircle]; EE
+	node [shape = circle];
+	qi  -> EE
+	EE -> OE [ label = "a" ];
+	EE -> EO [ label = "b" ];
+	OE -> EE [ label = "a" ];
+	OE -> OO [ label = "b" ];
+	OO -> OE [ label = "b" ];
+	OO -> EO [ label = "a" ];
+	EO -> OO [ label = "a" ];	
+	EO -> EE [ label = "b" ];	
+}
