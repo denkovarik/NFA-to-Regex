@@ -19,3 +19,24 @@ A regular expression can sometimes be used to to represent a NFA. For example th
 * Graphviz
 * Graphviz 0.16 Python Package
 * Networkx
+
+## Setup
+
+### Clone the Repo
+* SSH
+```
+git clone git@github.com:denkovarik/NFA-to-Regex.git
+```
+* HTTPS
+```
+git clone https://github.com/denkovarik/NFA-to-Regex.git
+```
+
+### Usage
+```
+python nfa2Rex.py path/to/nfa/dot/file.gv
+```
+* Example usage
+```
+python nfa2Rex.py testing/NFAs/tests/test1.gv
+```
