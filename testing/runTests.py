@@ -1542,7 +1542,7 @@ class nfa2RexTests(unittest.TestCase):
         # Test 3
         G = nx.DiGraph(nfaTest8) 
 
-        sol = '\u03BB+(10)*' 
+        sol = '(10)*' 
         ans = cnrt2StateGTG2Regex(G, 'q_0', 'q_0')
         self.assertTrue(ans == sol)
 
@@ -1554,13 +1554,13 @@ class nfa2RexTests(unittest.TestCase):
         """
         # Test 1
         G = nx.DiGraph(nfaTest8) 
-        sol = '\u03BB+(10)*' 
+        sol = '(10)*' 
         ans = nfa2Rex(G)
         self.assertTrue(ans == sol)
         
         # Test 2
         G = nx.DiGraph(nfaTest1) 
-        sol = '\u03BB+(10)*' 
+        sol = '(10)*' 
         ans = nfa2Rex(G)
         self.assertTrue(ans == sol)
         

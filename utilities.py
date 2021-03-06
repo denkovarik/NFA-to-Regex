@@ -233,7 +233,7 @@ def cnrt2StateGTG2Regex(G, p, q):
         + '(' + rkk + ')*' + '(' + rkp + '))*'
         newRegex = simplifyRegexp(newRegex)
 
-        return '\u03BB+' + newRegex
+        return newRegex
 
 
     # Find the necessary edges
