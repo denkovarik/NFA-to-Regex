@@ -51,39 +51,34 @@ Test NFA graphs can be found in the 'testing/NFAs/tests/' directory.
 ## Description of Algorithms
 Given an NFA with a single final state the is distinct from the initial state, the basic algorithm is to iteratively remove nodes one at a time until there are only 2 states left. An equation is then applied to the final 2 states the get the final regular expression. The algorithm is as follows:
 
-1. > Start with an nfa with states q0, q1, … , qn, and a single final state, distinct from its initial state.
-2. > Convert the nfa into a complete generalized transition graph (GTG). This means that you generate a complete graph where every node is connected to every other node. Each new node that needs to be added is labeled with ∅. An example of a complete generalized transition graph for the nfa from figure 1 is given below in figure 2.
-   > <p align="center">
-   >   <img src="https://github.com/denkovarik/NFA-to-Regex/blob/master/images/gtg.PNG">
-   >   
-   >   Figure 1: Complete Generalized Transition Graph
-   > </p>
-3. > If the GTG has only two states, with qi as its initial state and qj its final state, its associated regular expression is
-   > <p align="center">
-   >   <img src="https://github.com/denkovarik/NFA-to-Regex/blob/master/images/eq1.PNG">
-   >   
-   >   Equation 1
-   > </p>
-4. > If the GTG has three states, with an initial state qi, final state qj, and third state qk, introduce new edges labeled
-   > <p align="center">
-   >   <img src="https://github.com/denkovarik/NFA-to-Regex/blob/master/images/eq2.PNG">
-   >   
-   >   Equation 2
-   > </p>
-5. > 	If the GTG has four or more states, pick a state qk to be removed. Apply rule 4 for all pairs of states (q_i,q_j ),i≠k,j≠k. At each step apply the simplifying rules
-   > <p align="center">
-   >   <img src="https://github.com/denkovarik/NFA-to-Regex/blob/master/images/simpRules.PNG">
-   >   
-   >   Simplification Rules
-   > </p>
-   > wherever possible. When this is done, remove state qk.
-6. > Repeat Steps 3 to 5 until the correct regular expression is obtained.
+1. Start with an nfa with states q0, q1, … , qn, and a single final state, distinct from its initial state.
+2. Convert the nfa into a complete generalized transition graph (GTG). This means that you generate a complete graph where every node is connected to every other node. Each new node that needs to be added is labeled with ∅. An example of a complete generalized transition graph for the nfa from figure 1 is given below in figure 2.
+<p align="center">
+   <img src="https://github.com/denkovarik/NFA-to-Regex/blob/master/images/gtg.PNG">
+   Figure 1: Complete Generalized Transition Graph
+</p>
+3. If the GTG has only two states, with qi as its initial state and qj its final state, its associated regular expression is
+<p align="center">
+   <img src="https://github.com/denkovarik/NFA-to-Regex/blob/master/images/eq1.PNG"> 
+   Equation 1
+</p>
+4. If the GTG has three states, with an initial state qi, final state qj, and third state qk, introduce new edges labeled
+<p align="center">
+   <img src="https://github.com/denkovarik/NFA-to-Regex/blob/master/images/eq2.PNG">
+   Equation 2
+</p>
+5. If the GTG has four or more states, pick a state qk to be removed. Apply rule 4 for all pairs of states (q_i,q_j ),i≠k,j≠k. At each step apply the simplifying rules
+<p align="center">
+   <img src="https://github.com/denkovarik/NFA-to-Regex/blob/master/images/simpRules.PNG">
+   Simplification Rules
+</p>
+wherever possible. When this is done, remove state qk.
+6. Repeat Steps 3 to 5 until the correct regular expression is obtained.
 
 For the special cases where the given NFA has a final state that is the same as the initial state, follow the algorithm above you the graph is reduced to to states. When the graph is reduced to two states with an initial and final state of p and a second state k, apply the following equation to get the regular expression for the graph while applying the simplifying rues from step 5.
 
 <p align="center">
   <img src="https://github.com/denkovarik/NFA-to-Regex/blob/master/images/eq3.PNG">
-  
   Equation 3
 </p>
 
