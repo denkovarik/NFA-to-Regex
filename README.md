@@ -60,6 +60,7 @@ Given an NFA with a single final state the is distinct from the initial state, t
 3. If the GTG has only two states, with qi as its initial state and qj its final state, its associated regular expression is
 <p align="center">
    <img src="https://github.com/denkovarik/NFA-to-Regex/blob/master/images/eq1.PNG"> 
+   <br>
    Equation 1
 </p>
 4. If the GTG has three states, with an initial state qi, final state qj, and third state qk, introduce new edges labeled
