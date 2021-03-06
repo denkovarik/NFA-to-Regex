@@ -52,6 +52,12 @@ Test NFA graphs can be found in the 'testing/NFAs/tests/' directory.
 Given an NFA with a single final state the is distinct from the initial state, the basic algorithm is to iteratively remove nodes one at a time until there are only 2 states left. An equation is then applied to the final 2 states the get the final regular expression. The algorithm is as follows:
 
 1. > Start with an nfa with states q0, q1, … , qn, and a single final state, distinct from its initial state.
+2. > Convert the nfa into a complete generalized transition graph (GTG). This means that you generate a complete graph where every node is connected to every other node. Each new node that needs to be added is labeled with ∅. An example of a complete generalized transition graph for the nfa from figure 1 is given below in figure 2.
+<p align="center">
+  <img src="https://github.com/denkovarik/NFA-to-Regex/blob/master/images/gtg.PNG">
+  Figure 1: Complete Generalized Transition Graph
+</p>
+3. > If the GTG has only two states, with qi as its initial state and qj its final state, its associated regular expression is
 
 ## Author
 * Dennis Kovarik 
