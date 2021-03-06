@@ -38,6 +38,9 @@ def applySimpRules(regex):
 
         # Apply simplifying rule (r + \u2205 = r)
         regex, stop = applySimpRule1(regex)       
+        
+        # Apply simplifying rule (\u2205* = \u03BB)
+        regex = regex.replace('\u2205*', '\u03BB')
  
         # Remove redundant parentheses
         regex = simplifyPara(regex)
@@ -230,7 +233,7 @@ def cnrt2StateGTG2Regex(G, p, q):
         + '(' + rkk + ')*' + '(' + rkp + '))*'
         newRegex = simplifyRegexp(newRegex)
 
-        return newRegex
+        return '\u03BB+' + newRegex
 
 
     # Find the necessary edges
@@ -503,7 +506,7 @@ def nfa2Rex(G):
                 G.add_edge(*e[0], label=e[1])
  
     rex = cnrt2StateGTG2Regex(G, init, final)
-    return simplifyRegexp(rex)
+    return rex
 
 
 def removeDupAdditions(subRegexp):
@@ -712,7 +715,7 @@ def simplifyRegexp(regexp):
         regexp = applySimpRules(regexp)
             
         # Remove lambda
-        regexp = regexp.replace('\u03BB', '')        
+        regexp = regexp.replace('\u03BB', '') 
 
         # Remove '+' at beginning
         if len(regexp) > 0 and regexp[0] == '+':
