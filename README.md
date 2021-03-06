@@ -47,3 +47,11 @@ python nfa2Rex.py testing/NFAs/tests/test1.gv
 python testing/runTests.py
 ```
 Test NFA graphs can be found in the 'testing/NFAs/tests/' directory.
+
+## Description of Algorithms
+Given an NFA with a single final state the is distinct from the initial state, the basic algorithm is to iteratively remove nodes one at a time until there are only 2 states left. An equation is then applied to the final 2 states the get the final regular expression. The algorithm is as follows:
+
+1. > Start with an nfa with states q0, q1, … , qn, and a single final state, distinct from its initial state.
+
+## Author
+* Dennis Kovarik 
