@@ -53,15 +53,15 @@ Given an NFA with a single final state the is distinct from the initial state, t
 
 1. > Start with an nfa with states q0, q1, … , qn, and a single final state, distinct from its initial state.
 2. > Convert the nfa into a complete generalized transition graph (GTG). This means that you generate a complete graph where every node is connected to every other node. Each new node that needs to be added is labeled with ∅. An example of a complete generalized transition graph for the nfa from figure 1 is given below in figure 2.
-<p align="center">
-  <img src="https://github.com/denkovarik/NFA-to-Regex/blob/master/images/gtg.PNG">
-  Figure 1: Complete Generalized Transition Graph
-</p>
+   > <p align="center">
+   >   <img src="https://github.com/denkovarik/NFA-to-Regex/blob/master/images/gtg.PNG">
+   >   Figure 1: Complete Generalized Transition Graph
+   > </p>
 3. > If the GTG has only two states, with qi as its initial state and qj its final state, its associated regular expression is
-<p align="center">
-  <img src="https://github.com/denkovarik/NFA-to-Regex/blob/master/images/eq1.PNG">
-  Equation 1
-</p>
+   > <p align="center">
+   >   <img src="https://github.com/denkovarik/NFA-to-Regex/blob/master/images/eq1.PNG">
+   >   Equation 1
+   > </p>
 4. > If the GTG has three states, with an initial state qi, final state qj, and third state qk, introduce new edges labeled
 <p align="center">
   <img src="https://github.com/denkovarik/NFA-to-Regex/blob/master/images/eq2.PNG">
