@@ -2,7 +2,7 @@ digraph deterministic_finite_accepter {
 	rankdir=LR;
 	size="8,5"
 	node [shape = point ]; qi
-	node [shape = doublecircle]; EE
+	node [shape = doublecircle]; EO
 	node [shape = circle];
 	qi  -> EE
 	EE -> OE [ label = "a" ];
