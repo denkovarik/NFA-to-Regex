@@ -13,7 +13,7 @@ def applySimpRules(regex):
         r\u2205 = \u2205
         \u2205* = \u03BB
 
-    :param regex: The regular expression to apply the simplifying ruls to
+    :param regex: The regular expression to apply the simplifying rules to
     :return: The simplified regex expression
     """
     # Remove whitespace
@@ -53,7 +53,7 @@ def applySimpRule1(regex):
     Applies the following simplifying rules:
         r + \u2205 = r
 
-    :param regex: The regular expression to apply the simplifying ruls to
+    :param regex: The regular expression to apply the simplifying rules to
     :return: The simplified regex expression
     """
     stop = 1
@@ -97,7 +97,7 @@ def applySimpRule2(regex):
     Applies the following simplifying rules:
         r\u2205 = \u2205
 
-    :param regex: The regular expression to apply the simplifying ruls to
+    :param regex: The regular expression to apply the simplifying rules to
     :return: The simplified regex expression
     """
     i = regex.find('\u2205')
@@ -600,7 +600,7 @@ def simpAddition(subRegexp):
 
 def simplifyPara(simPara):
     """
-    Removes redundant parentheses from a regular expression..
+    Removes redundant parentheses from a regular expression.
 
     :param simPara: Regular expretion to simplify
     :return: Simplified regular expression with redundant parentheses removed
