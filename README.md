@@ -58,6 +58,29 @@ Given an NFA with a single final state the is distinct from the initial state, t
   Figure 1: Complete Generalized Transition Graph
 </p>
 3. > If the GTG has only two states, with qi as its initial state and qj its final state, its associated regular expression is
+<p align="center">
+  <img src="https://github.com/denkovarik/NFA-to-Regex/blob/master/images/eq1.PNG">
+  Equation 1
+</p>
+4. > If the GTG has three states, with an initial state qi, final state qj, and third state qk, introduce new edges labeled
+<p align="center">
+  <img src="https://github.com/denkovarik/NFA-to-Regex/blob/master/images/eq2.PNG">
+  Equation 2
+</p>
+5. > 	If the GTG has four or more states, pick a state qk to be removed. Apply rule 4 for all pairs of states (q_i,q_j ),i≠k,j≠k. At each step apply the simplifying rules
+<p align="center">
+  <img src="https://github.com/denkovarik/NFA-to-Regex/blob/master/images/simpRules.PNG">
+  Simplification Rules
+</p>
+   > wherever possible. When this is done, remove state qk.
+6.  > 6.	Repeat Steps 3 to 5 until the correct regular expression is obtained.
+
+For the special cases where the given NFA has a final state that is the same as the initial state, follow the algorithm above you the graph is reduced to to states. When the graph is reduced to two states with an initial and final state of p and a second state k, apply the following equation to get the regular expression for the graph while applying the simplifying rues from step 5.
+
+<p align="center">
+  <img src="https://github.com/denkovarik/NFA-to-Regex/blob/master/images/eq3.PNG">
+  Equation 3
+</p>
 
 ## Author
 * Dennis Kovarik 
