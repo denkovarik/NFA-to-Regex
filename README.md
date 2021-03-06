@@ -40,3 +40,10 @@ python nfa2Rex.py path/to/nfa/dot/file.gv
 ```
 python nfa2Rex.py testing/NFAs/tests/test1.gv
 ```
+
+### Testing
+* Run all Unit and Functional Tests
+```
+python testing/runTests.py
+```
+Test NFA graphs can be found in the 'testing/NFAs/tests/' directory.
